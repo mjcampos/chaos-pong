@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dva300ho40ui3"]
+[gd_scene load_steps=6 format=3 uid="uid://dva300ho40ui3"]
 
 [ext_resource type="Texture2D" uid="uid://cj8gpk8gw5duj" path="res://assets/background.png" id="1_3mcd6"]
 [ext_resource type="PackedScene" uid="uid://c4r6ckxi4xpb7" path="res://scenes/player/player.tscn" id="2_8yg1i"]
 [ext_resource type="PackedScene" uid="uid://b68t68wxhhx0h" path="res://scenes/Barrier/barrier.tscn" id="3_sxlxk"]
 [ext_resource type="PackedScene" uid="uid://bw1im7e4mbn4u" path="res://scenes/puck/puck.tscn" id="4_2yneu"]
+[ext_resource type="PackedScene" uid="uid://c24vpwa1eahi8" path="res://scenes/enemy/enemy.tscn" id="5_vvadt"]
 
 [node name="Game" type="Node2D"]
 
@@ -22,3 +23,7 @@ position = Vector2(576, 659)
 
 [node name="Puck" parent="." instance=ExtResource("4_2yneu")]
 position = Vector2(575, 330)
+
+[node name="Enemy" parent="." instance=ExtResource("5_vvadt")]
+position = Vector2(1091, 326)
+puck = NodePath("../Puck")
