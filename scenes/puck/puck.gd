@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var _speed: float = 300.0
 
 var speed_increase: float = 1.1  # Increase speed by 10% per hit
-var min_speed: float = 200.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
