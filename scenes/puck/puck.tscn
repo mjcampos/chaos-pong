@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw1im7e4mbn4u"]
+
+[ext_resource type="Texture2D" uid="uid://dbkgnv6usyxy8" path="res://assets/puck-Sheet.png" id="1_noad7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qjme"]
+atlas = ExtResource("1_noad7")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udsf3"]
+atlas = ExtResource("1_noad7")
+region = Rect2(17, 0, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ksqg4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qjme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udsf3")
+}],
+"loop": true,
+"name": &"Beep",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqkgm"]
+
+[node name="Puck" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_ksqg4")
+animation = &"Beep"
+autoplay = "Beep"
+frame_progress = 0.520438
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hqkgm")
