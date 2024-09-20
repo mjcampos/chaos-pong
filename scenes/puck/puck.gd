@@ -13,7 +13,7 @@ func set_random_direction():
 	randomize()
 	
 	var angle = randf_range(0, PI * 2)
-	angle = 1.5
+	
 	velocity = Vector2(cos(angle), sin(angle)) * _speed
 	
 func _physics_process(delta):
