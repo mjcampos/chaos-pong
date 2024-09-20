@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bw1im7e4mbn4u"]
+[gd_scene load_steps=7 format=3 uid="uid://bw1im7e4mbn4u"]
 
 [ext_resource type="Texture2D" uid="uid://dbkgnv6usyxy8" path="res://assets/puck-Sheet.png" id="1_noad7"]
+[ext_resource type="Script" path="res://scenes/puck/puck.gd" id="1_ulm4a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qjme"]
 atlas = ExtResource("1_noad7")
@@ -28,13 +29,14 @@ animations = [{
 
 [node name="Puck" type="RigidBody2D"]
 gravity_scale = 0.0
+script = ExtResource("1_ulm4a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_ksqg4")
 animation = &"Beep"
 autoplay = "Beep"
-frame_progress = 0.520438
+frame_progress = 0.9875
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hqkgm")
