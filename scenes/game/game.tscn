@@ -17,6 +17,7 @@ position = Vector2(576, 324)
 texture = ExtResource("1_3mcd6")
 
 [node name="Player" parent="." instance=ExtResource("2_8yg1i")]
+process_mode = 1
 position = Vector2(101, 331)
 
 [node name="Barrier" parent="." instance=ExtResource("3_sxlxk")]
@@ -29,6 +30,7 @@ position = Vector2(576, 659)
 position = Vector2(575, 330)
 
 [node name="Enemy" parent="." instance=ExtResource("5_vvadt")]
+process_mode = 1
 position = Vector2(1091, 326)
 puck = NodePath("../Puck")
 
@@ -49,6 +51,23 @@ offset_left = 636.0
 offset_top = 16.0
 offset_right = 659.0
 offset_bottom = 71.0
+
+[node name="FinalMessage" type="Label" parent="."]
+offset_top = 180.0
+offset_right = 1152.0
+offset_bottom = 302.0
+theme_override_font_sizes/font_size = 50
+text = "Hello There"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="FinalMessage"]
+layout_mode = 0
+offset_top = 142.0
+offset_right = 1152.0
+offset_bottom = 197.0
+theme_override_font_sizes/font_size = 40
+text = "Press Enter to reset, Esc to quit"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="PlayerGoal" to="." method="_on_player_goal_entered"]
 [connection signal="body_entered" from="EnemyGoal" to="." method="_on_enemy_goal_entered"]
