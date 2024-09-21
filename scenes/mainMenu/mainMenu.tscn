@@ -32,14 +32,14 @@ position = Vector2(152, 198)
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("2_td58b")
 autoplay = "default"
-frame_progress = 0.153622
+frame_progress = 0.602002
 
 [node name="LogoSpriteAnimated2" type="AnimatedSprite2D" parent="."]
 position = Vector2(923, 198)
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("2_td58b")
 autoplay = "default"
-frame_progress = 0.533616
+frame_progress = 0.981991
 
 [node name="PlayButton" type="Button" parent="."]
 offset_left = 528.0
@@ -55,4 +55,21 @@ theme_override_colors/icon_normal_color = Color(0.858824, 0.0862745, 0.054902, 1
 theme_override_font_sizes/font_size = 40
 text = "Play"
 
+[node name="InstructionsButton" type="Button" parent="."]
+offset_left = 462.0
+offset_top = 491.0
+offset_right = 701.0
+offset_bottom = 554.0
+theme_override_colors/font_hover_pressed_color = Color(0.121569, 0.811765, 0.819608, 1)
+theme_override_colors/font_hover_color = Color(0.121569, 0.811765, 0.819608, 1)
+theme_override_colors/font_pressed_color = Color(0.189499, 0.901548, 0.909719, 1)
+theme_override_colors/font_focus_color = Color(0.121569, 0.811765, 0.819608, 1)
+theme_override_colors/font_color = Color(0.122287, 0.813002, 0.817875, 1)
+theme_override_colors/icon_focus_color = Color(0.121569, 0.811765, 0.819608, 1)
+theme_override_colors/icon_hover_color = Color(0.121569, 0.811765, 0.819608, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.121569, 0.811765, 0.819608, 1)
+theme_override_font_sizes/font_size = 40
+text = "Instructions"
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="InstructionsButton" to="." method="_on_instructions_button_pressed"]
