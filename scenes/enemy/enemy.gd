@@ -3,10 +3,6 @@ extends CharacterBody2D
 @export var _speed: float = 100.0  # Speed of the AI paddle
 @export var puck: NodePath  # Reference to the puck node
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 func _physics_process(delta):
 	# Get the puck's position
 	var puck_position = get_node(puck).position
