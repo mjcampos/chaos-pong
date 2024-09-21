@@ -6,6 +6,8 @@ extends Node2D
 @onready var player_score = $PlayerScore
 @onready var enemy_score = $EnemyScore
 @onready var final_message_display = $FinalMessage
+@onready var homer_woohoo_audio: AudioStreamPlayer = $HomerWoohooAudio
+@onready var homer_i_am_so_smart_audio: AudioStreamPlayer = $HomerIAmSoSmartAudio
 
 var playerHasAChoice = false
 
@@ -23,6 +25,7 @@ func _process(delta):
 
 func _on_player_goal_entered(body: Node2D):
 	if body is Puck:
+		homer_woohoo_audio.play()
 		enemyScore += 1
 		enemy_score.text = str(enemyScore)
 		
@@ -33,10 +36,14 @@ func _on_player_goal_entered(body: Node2D):
 
 func _on_enemy_goal_entered(body: Node2D):
 	if body is Puck:
+		homer_woohoo_audio.play()
 		playerScore += 1
 		player_score.text = str(playerScore)
 		
-		reset_puck(body)
+		if playerScore >= 3:
+			reset_game(body)
+		else:
+			reset_puck(body)
 
 func reset_puck(body: Node2D):
 	await get_tree().create_timer(1.0).timeout
@@ -46,10 +53,13 @@ func reset_game(body: Node2D):
 	# 1. Pause the game
 	pause_game()
 	
-	# 2. Display message
+	# 2. Player Homer message if player won
+	homerMessagePlay()
+	
+	# 3. Display message
 	display_final_message()
 	
-	# 3. Give player UI control to make a choice
+	# 4. Give player UI control to make a choice
 	playerHasAChoice = true
 
 func pause_game():
@@ -66,3 +76,9 @@ func display_final_message():
 		
 	final_message_display.text = final_message
 	final_message_display.visible = true
+
+func homerMessagePlay():
+	await get_tree().create_timer(0.5).timeout
+	
+	if playerScore > enemyScore:
+		homer_i_am_so_smart_audio.play()
