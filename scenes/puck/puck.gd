@@ -23,6 +23,7 @@ func _physics_process(delta):
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 	
 	if collision:
+		print("Increase speed")
 		velocity = collision.get_normal() * (velocity.length() * speed_increase)
 
 func start_random_timer():
