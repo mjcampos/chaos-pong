@@ -8,6 +8,7 @@ extends Node2D
 @onready var final_message_display = $FinalMessage
 @onready var homer_woohoo_audio: AudioStreamPlayer = $HomerWoohooAudio
 @onready var homer_i_am_so_smart_audio: AudioStreamPlayer = $HomerIAmSoSmartAudio
+@onready var homer_doh_audio: AudioStreamPlayer = $HomerDohAudio
 
 var playerHasAChoice = false
 
@@ -25,7 +26,7 @@ func _process(delta):
 
 func _on_player_goal_entered(body: Node2D):
 	if body is Puck:
-		homer_woohoo_audio.play()
+		homer_doh_audio.play()
 		enemyScore += 1
 		enemy_score.text = str(enemyScore)
 		

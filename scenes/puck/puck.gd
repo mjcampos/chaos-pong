@@ -6,7 +6,6 @@ class_name Puck
 @export var max_time: float = 5.0  # Maximum time between direction changes
 
 @onready var timer = $Timer
-@onready var homer_doh_audio = $HomerDohAudio
 
 var speed_increase: float = 1.2  # Increase speed by 20% per hit
 var puck_starting_pos: Vector2
@@ -29,7 +28,6 @@ func _physics_process(delta):
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 	
 	if collision:
-		homer_doh_audio.play()
 		velocity = collision.get_normal() * (velocity.length() if (velocity.length() > max_velocity) else (velocity.length() * speed_increase))
 
 func start_random_timer():

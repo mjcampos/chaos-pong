@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw1im7e4mbn4u"]
+[gd_scene load_steps=7 format=3 uid="uid://bw1im7e4mbn4u"]
 
 [ext_resource type="Texture2D" uid="uid://dbkgnv6usyxy8" path="res://assets/puck-Sheet.png" id="1_noad7"]
 [ext_resource type="Script" path="res://scenes/puck/puck.gd" id="1_ulm4a"]
-[ext_resource type="AudioStream" uid="uid://b7bgkifhcrejo" path="res://assets/homer-doh.mp3" id="3_xveq8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qjme"]
 atlas = ExtResource("1_noad7")
@@ -42,9 +41,5 @@ frame_progress = 0.9875
 shape = SubResource("CircleShape2D_hqkgm")
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="HomerDohAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_xveq8")
-volume_db = -1.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
