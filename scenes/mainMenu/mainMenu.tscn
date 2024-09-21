@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsw0hovbbq025"]
+
+[ext_resource type="Script" path="res://scenes/mainMenu/main_menu.gd" id="1_3l38f"]
+[ext_resource type="Texture2D" uid="uid://dd2icr8ypc165" path="res://assets/background-2.png" id="1_jufdn"]
+[ext_resource type="SpriteFrames" uid="uid://dkn1iwg83mthk" path="res://assets/logo_sprite_frames.tres" id="2_td58b"]
+
+[node name="mainMenu" type="Node2D"]
+script = ExtResource("1_3l38f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_jufdn")
+
+[node name="Title" type="Label" parent="."]
+offset_top = 135.0
+offset_right = 1152.0
+offset_bottom = 204.0
+theme_override_font_sizes/font_size = 50
+text = "Chaos Pong"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_top = 238.0
+offset_right = 1152.0
+offset_bottom = 293.0
+theme_override_font_sizes/font_size = 40
+text = "Michael Campos"
+horizontal_alignment = 1
+
+[node name="LogoSpriteAnimated" type="AnimatedSprite2D" parent="."]
+position = Vector2(152, 198)
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("2_td58b")
+autoplay = "default"
+frame_progress = 0.398762
+
+[node name="LogoSpriteAnimated2" type="AnimatedSprite2D" parent="."]
+position = Vector2(923, 198)
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("2_td58b")
+autoplay = "default"
+frame_progress = 0.778752
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 528.0
+offset_top = 398.0
+offset_right = 616.0
+offset_bottom = 461.0
+theme_override_colors/font_hover_pressed_color = Color(0.858824, 0.0862745, 0.054902, 1)
+theme_override_colors/font_hover_color = Color(0.858824, 0.0862745, 0.054902, 1)
+theme_override_colors/font_pressed_color = Color(0.996782, 0.537547, 0.472905, 1)
+theme_override_colors/font_focus_color = Color(0.858824, 0.0862745, 0.054902, 1)
+theme_override_colors/font_color = Color(0.858824, 0.0862745, 0.054902, 1)
+theme_override_colors/icon_normal_color = Color(0.858824, 0.0862745, 0.054902, 1)
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

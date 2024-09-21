@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dkn1iwg83mthk"]
+
+[ext_resource type="Texture2D" uid="uid://c80toeorfd7iq" path="res://assets/logo-sprite-sheet.png" id="1_c1h1c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncbex"]
+atlas = ExtResource("1_c1h1c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf6g4"]
+atlas = ExtResource("1_c1h1c")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncbex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wf6g4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
