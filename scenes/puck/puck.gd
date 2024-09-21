@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Puck
 
 @export var _speed: float = 300.0
-@export var min_time: float = 1.0  # Minimum time between direction changes
-@export var max_time: float = 5.0  # Maximum time between direction changes
+@export var min_time: float = 2.0  # Minimum time between direction changes
+@export var max_time: float = 10.0  # Maximum time between direction changes
 
 @onready var timer = $Timer
 

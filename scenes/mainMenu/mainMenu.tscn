@@ -32,14 +32,14 @@ position = Vector2(152, 198)
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("2_td58b")
 autoplay = "default"
-frame_progress = 0.398762
+frame_progress = 0.153622
 
 [node name="LogoSpriteAnimated2" type="AnimatedSprite2D" parent="."]
 position = Vector2(923, 198)
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("2_td58b")
 autoplay = "default"
-frame_progress = 0.778752
+frame_progress = 0.533616
 
 [node name="PlayButton" type="Button" parent="."]
 offset_left = 528.0
