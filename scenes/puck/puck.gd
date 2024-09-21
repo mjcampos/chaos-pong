@@ -3,13 +3,14 @@ class_name Puck
 
 @export var _speed: float = 300.0
 @export var min_time: float = 2.0  # Minimum time between direction changes
-@export var max_time: float = 10.0  # Maximum time between direction changes
+@export var max_time: float = 5.0  # Maximum time between direction changes
 
 @onready var timer = $Timer
 @onready var homer_doh_audio = $HomerDohAudio
 
 var speed_increase: float = 1.2  # Increase speed by 20% per hit
 var puck_starting_pos: Vector2
+var max_velocity: float = 2000.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,9 +29,8 @@ func _physics_process(delta):
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 	
 	if collision:
-		print("Increase speed")
 		homer_doh_audio.play()
-		velocity = collision.get_normal() * (velocity.length() * speed_increase)
+		velocity = collision.get_normal() * (velocity.length() if (velocity.length() > max_velocity) else (velocity.length() * speed_increase))
 
 func start_random_timer():
 	timer.wait_time = randf_range(min_time, max_time)
@@ -42,3 +42,6 @@ func _on_timer_timeout():
 
 func reset_location():
 	position = puck_starting_pos
+	velocity = Vector2.ZERO  # Reset velocity
+	
+	set_random_direction()
