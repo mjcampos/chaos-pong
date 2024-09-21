@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Puck
 
 @export var _speed: float = 300.0
 @export var min_time: float = 1.0  # Minimum time between direction changes
@@ -6,10 +7,13 @@ extends CharacterBody2D
 
 @onready var timer = $Timer
 
-var speed_increase: float = 1.1  # Increase speed by 10% per hit
+var speed_increase: float = 1.2  # Increase speed by 20% per hit
+var puck_starting_pos: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	puck_starting_pos = position
+	
 	randomize()
 	set_random_direction()
 	start_random_timer()
@@ -33,3 +37,6 @@ func start_random_timer():
 func _on_timer_timeout():
 	set_random_direction()  # Change the direction randomly
 	start_random_timer()  # Restart the timer with a new random interval
+
+func reset_location():
+	position = puck_starting_pos
