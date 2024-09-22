@@ -60,7 +60,6 @@ offset_top = 180.0
 offset_right = 1152.0
 offset_bottom = 302.0
 theme_override_font_sizes/font_size = 50
-text = "Hello There"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="FinalMessage"]
@@ -69,7 +68,7 @@ offset_top = 142.0
 offset_right = 1152.0
 offset_bottom = 197.0
 theme_override_font_sizes/font_size = 40
-text = "Press Enter to reset, Esc to quit"
+text = "Press Enter to reset"
 horizontal_alignment = 1
 
 [node name="HomerWoohooAudio" type="AudioStreamPlayer" parent="."]

@@ -74,4 +74,12 @@ offset_bottom = 509.0
 theme_override_font_sizes/font_size = 40
 text = "Press \"s\" or down arrow to move down"
 
+[node name="Label4" type="Label" parent="."]
+offset_left = 346.0
+offset_top = 553.0
+offset_right = 708.0
+offset_bottom = 595.0
+theme_override_font_sizes/font_size = 30
+text = "Press ESC anytime to quit"
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
