@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cs1d5wbx804pj"]
+[gd_scene load_steps=9 format=3 uid="uid://cs1d5wbx804pj"]
 
 [ext_resource type="Script" path="res://scenes/instructions/instructions.gd" id="1_8qk6t"]
 [ext_resource type="Texture2D" uid="uid://dd2icr8ypc165" path="res://assets/background-2.png" id="1_k5imp"]
 [ext_resource type="Texture2D" uid="uid://cdnf0slrvkqao" path="res://assets/back-button.png" id="3_6x16p"]
+[ext_resource type="Texture2D" uid="uid://ba3vmttt5efdq" path="res://assets/instruction-arrow.png" id="4_y6cf8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmwhl"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -45,5 +46,32 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xqnux")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_x2v6j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7wq2x")
 icon = ExtResource("3_6x16p")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(216, 331)
+scale = Vector2(2, 2)
+texture = ExtResource("4_y6cf8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(216, 480)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("4_y6cf8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 346.0
+offset_top = 310.0
+offset_right = 995.0
+offset_bottom = 365.0
+theme_override_font_sizes/font_size = 40
+text = "Press \"w\" or up arrow to move up"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 346.0
+offset_top = 454.0
+offset_right = 1096.0
+offset_bottom = 509.0
+theme_override_font_sizes/font_size = 40
+text = "Press \"s\" or down arrow to move down"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
